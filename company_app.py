@@ -3,7 +3,16 @@ import pandas as pd
 import streamlit as st 
 import pickle
 
-model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
+import requests
+import pickle
+
+url = 'https://raw.githubusercontent.com/username/repo/branch/path/to/model_code/gnb_company_bayes_model.pkl'
+response = requests.get(url)
+file_content = response.content
+
+model = pickle.loads(file_content)
+
+# model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
 
 def main(): 
     html_temp = """
