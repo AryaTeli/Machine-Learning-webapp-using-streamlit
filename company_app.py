@@ -13,7 +13,7 @@ url = 'https://github.com/AryaTeli/Machine-Learning-webapp-using-streamlit/blob/
 response = requests.get(url)
 
 # Load the model directly
-model = pickle.loads(response.content)
+model = pickle.load(response.content)
 
 print(model)
 
