@@ -12,12 +12,10 @@ url = 'https://github.com/AryaTeli/Machine-Learning-webapp-using-streamlit/blob/
 # Download the file
 response = requests.get(url)
 
-# Save the file
-with open('gnb_company_bayes_model.pkl', 'wb') as f:
-    f.write(response.content)
+# Load the model directly
+model = pickle.loads(response.content)
 
-# Load the model
-model = pickle.load(open('gnb_company_bayes_model.pkl', 'rb'))
+print(model)
 
 # model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
 
