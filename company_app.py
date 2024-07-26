@@ -3,7 +3,8 @@ import pandas as pd
 import streamlit as st 
 import pickle
 
-model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
+model = pickle.load(open(r'Machine-Learning-webapp-using-streamlit
+/model_code/gnb_company_bayes_model.pkl', 'rb'))
 
 def main(): 
     html_temp = """
