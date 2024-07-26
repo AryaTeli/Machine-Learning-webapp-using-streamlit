@@ -10,7 +10,7 @@ url = 'https://raw.githubusercontent.com/username/repo/branch/path/to/model_code
 response = requests.get(url)
 file_content = response.content
 
-model = pickle.loads(file_content)
+model = pickle.load(file_content)
 
 # model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
 
