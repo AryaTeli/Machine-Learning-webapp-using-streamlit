@@ -3,14 +3,21 @@ import pandas as pd
 import streamlit as st 
 import pickle
 
-import requests
 import pickle
+import requests
 
-url = 'https://raw.githubusercontent.com/username/repo/branch/path/to/model_code/gnb_company_bayes_model.pkl'
+# Replace with the raw URL of the file
+url = 'https://github.com/AryaTeli/Machine-Learning-webapp-using-streamlit/blob/main/model_code/gnb_company_bayes_model.pkl'
+
+# Download the file
 response = requests.get(url)
-file_content = response.content
 
-model = pickle.load(file_content)
+# Save the file
+with open('gnb_company_bayes_model.pkl', 'wb') as f:
+    f.write(response.content)
+
+# Load the model
+model = pickle.load(open('gnb_company_bayes_model.pkl', 'rb'))
 
 # model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
 
