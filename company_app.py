@@ -2,17 +2,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st 
 import pickle
-import sklearn as sns
-# model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
-
-try:
-    model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
-except FileNotFoundError:
-    st.error("Model file not found. Please ensure 'gnb_company_bayes_model.pkl' exists in the 'model_code' directory.")
-    st.stop()
-except Exception as e:
-    st.error(f"An error occurred while loading the model: {e}")
-    st.stop()
+model = pickle.load(open(r'model_code/gnb_company_bayes_model.pkl', 'rb'))
 
 def main(): 
     html_temp = """
